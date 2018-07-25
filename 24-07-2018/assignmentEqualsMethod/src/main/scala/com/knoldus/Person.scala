@@ -8,7 +8,7 @@ class Person(val name: String, var age: Int) {
     case _ => false
   }
 
-  override def hashCode(): Int = if (name == this.name) name.## else super.hashCode()
+  override def hashCode(): Int = 41 *(41+name.length())
 
 
 }
