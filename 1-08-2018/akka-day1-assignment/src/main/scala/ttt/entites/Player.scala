@@ -5,34 +5,36 @@ import akka.actor.{Actor, ActorRef}
 class Player extends Actor with TicTacToeMapper {
 
   override def receive: PartialFunction[Any, Unit] = {
-    case Play(playStep,actor)=>actor ! playStep
+    case Play(playStep, actor) => actor ! playStep
     case rightSelection: TicTacToeMap => printMapInArray(rightSelection.map)
     case wrongSelection: PlaceAlreadyFilled => print(s"OOPS ${wrongSelection} already filled select another place")
-    case isGameOver => print("You won !")
+    case GameOver => print("You won !")
   }
 }
 
 class Game extends Actor with TicTacToeLogic {
 
-  var map = Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+  var moves = Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 
   override def receive: PartialFunction[Any, Unit] = {
-    case PlayStep(choice,player) => {
-      if(choice-1 < 0 || choice-1 > 8){
-        sender() ! TicTacToeMap(map)
+    case PlayStep(choice, player) => {
+      if (choice - 1 < 0 || choice - 1 > 8) {
+
+        sender() ! TicTacToeMap(moves)
       }
-      else if(map(choice-1) == 0){
-        map( choice - 1 ) = player
-        if(isGameOver(map))
-          sender() ! isGameOver(map)
+      else if (moves(choice - 1) == 0) {
+        moves(choice - 1) = player
+        if (isGameOver(moves))
+          sender() ! GameOver
         else
-          sender() ! TicTacToeMap(map)
+          sender() ! TicTacToeMap(moves)
       }
       else {
-        sender() ! PlaceAlreadyFilled(map(choice))
-        sender() ! TicTacToeMap(map)
+        sender() ! PlaceAlreadyFilled(moves(choice))
+        sender() ! TicTacToeMap(moves)
       }
-    }}
+    }
+  }
 }
 
 
