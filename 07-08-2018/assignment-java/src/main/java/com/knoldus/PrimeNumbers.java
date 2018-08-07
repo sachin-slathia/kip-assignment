@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class PrimeNumbers {
 
-
+    //Add element to List
     public static List<Integer> insert(List<Integer> list) {
         Random random = new Random();
 
@@ -17,6 +17,7 @@ public class PrimeNumbers {
         }
         return list;
     }
+    //Returns whether number is prime or not
     public static boolean isPrimeNumber(int number) {
         int factors = 0;
         int j = 1;
@@ -32,9 +33,12 @@ public class PrimeNumbers {
         return (factors == 2);
     }
 
+    //Prints the List
     public static void printList(List<Integer> arrayList) {
         System.out.println("Contents of al: " + arrayList);
     }
+
+    //Updates the given List
     public static List<Integer> updateList(List<Integer> list){
 
 
