@@ -5,17 +5,26 @@ import java.util.Optional;
 
 public class ClassRoom {
 
-   String roomID;
+   String roomId;
     Optional<List<Student>> studentList;
 
     @Override
     public String toString() {
-        return String.format(roomID+ " " + studentList);
+        return String.format(roomId+ " " + studentList);
     }
 
 
-    ClassRoom(String roomID, Optional<List<Student>> studentList) {
-        this.roomID = roomID;
+
+    ClassRoom(String roomId, Optional<List<Student>> studentList) {
+        this.roomId = roomId;
         this.studentList = studentList;
+    }
+
+    public String getRoomId() {
+        return this.roomId;
+    }
+
+    public Optional<List<Student>> getStudentList() {
+        return this.studentList;
     }
 }

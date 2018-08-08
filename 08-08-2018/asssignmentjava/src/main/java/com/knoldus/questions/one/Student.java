@@ -11,6 +11,8 @@ public class Student {
     public String toString() {
         return String.format(name+ " " + rollNumber +" "+subject );
     }
+
+
     String name;
     Integer rollNumber;
     Optional<List<String>>  subject;
@@ -21,15 +23,14 @@ public class Student {
         this.subject=subject;
     }
 
-    public void insertFields()
-    {
 
-        Student first =new Student("Sachin",1,
-                Optional.of(Arrays.asList("Chemistry","Maths","Physics")));
-
-        Student second =new Student("Slathia",2,
-                Optional.of(Arrays.asList()));
-
+    public String getName() {
+        return this.name;
     }
-
+    public int getRollNo() {
+        return this.rollNumber;
+    }
+    public Optional<List<String>> getSubject() {
+        return this.subject;
+    }
 }

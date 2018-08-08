@@ -24,27 +24,13 @@ public class MainOperation {
                 Optional.of(Arrays.asList(first, second, third, fourth)));
         ClassRoom two = new ClassRoom("abc",
                 Optional.of(Arrays.asList(second)));
+        List<ClassRoom>list=Arrays.asList(one,two);
+
+        System.out.println(Operations.studentsWithRooms(list));
+        System.out.println(Operations.subject(list,"xyz"));
+        System.out.println(Operations.checkStudent(list));
 
 
-        List<ClassRoom> list = Arrays.asList(one, two);
-
-        System.out.println(list);
-
-        System.out.println(one);
 
 
-        System.out.println(one.studentList.get().stream().
-                filter(x -> !x.subject.isPresent())
-                .collect(Collectors.toList()));
-
-
-        List list1 = list.stream().filter(x -> "xyz".equals(x.roomID)).collect(Collectors.toList());
-
-        System.out.println(list1);
-
-
-        System.out.println(list.stream().filter(x->"xyz".equals(x.roomID)).collect(Collectors.toList()));
-
-
-    }
-}
+}}
