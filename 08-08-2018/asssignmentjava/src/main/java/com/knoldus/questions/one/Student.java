@@ -1,10 +1,9 @@
 package com.knoldus.questions.one;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+ //Defined class Student
 public class Student {
 
     @Override
@@ -16,6 +15,8 @@ public class Student {
     String name;
     Integer rollNumber;
     Optional<List<String>>  subject;
+
+      //Constructor
     Student(String name,Integer rollNumber,Optional<List<String>> subject)
     {
         this.name=name;
@@ -23,13 +24,15 @@ public class Student {
         this.subject=subject;
     }
 
-
+     //Returns name of Current Object
     public String getName() {
         return this.name;
     }
+     //Returns RollNo of Current Object
     public int getRollNo() {
         return this.rollNumber;
     }
+    //Returns List of Subject of particular Student
     public Optional<List<String>> getSubject() {
         return this.subject;
     }

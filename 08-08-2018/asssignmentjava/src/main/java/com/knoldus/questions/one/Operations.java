@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 public class Operations {
 
+
+//Returns List of students associated with a room that have no subjects associated
     public static List<String> studentsWithRooms(List<ClassRoom> classRooms) {
 
         return classRooms.stream()
@@ -17,6 +19,7 @@ public class Operations {
                 .collect(Collectors.toList());
     }
 
+//Returns List of subjects of students associated with a room that has roomID a particular String
     public static List<String> subject(List<ClassRoom> classRooms, String id) {
 
         return classRooms.stream()
@@ -29,6 +32,7 @@ public class Operations {
                 .collect(Collectors.toList());
     }
 
+//Returns List of subjects of students associated with a room that has roomID a particular String
     public static String checkStudent(List<ClassRoom> classRooms) {
         List<ClassRoom> classRoomWithStudents = classRooms.stream()
                 .filter(classRoom -> !classRoom.getStudentList().isPresent())
@@ -36,7 +40,7 @@ public class Operations {
         if (classRoomWithStudents.isEmpty())
             return "Hello World!";
         else
-            return "All rooms not associated with students.";
+            return "No Room is associated with Student";
 
 
     }
