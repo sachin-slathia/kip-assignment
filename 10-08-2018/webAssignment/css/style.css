@@ -147,3 +147,8 @@ h1.heading {
 hr{
     border-top: 10px solid #00ffe7;
 }
+
+.button1{
+	color:white;
+	background-color:blue;
+}
