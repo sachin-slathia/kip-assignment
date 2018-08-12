@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Knoldus Form</title>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="container" id="card">
+      <form>
+        <h2>Assignment Form</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="first">First Name</label>
+                    <input type="text" class="form-control" placeholder="" id="input-first-name">
+                    <small class="form-text" style="color: red; display:none;" id="first-name">First Name Required.</small>
+                </div>
+            </div>
+      <!--  col-md-6   -->
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="last">Last Name</label>
+                    <input type="text" class="form-control" placeholder="" id="input-last-name">
+                </div>
+            </div>
+            <!--  col-md-6   -->
+        </div>
+
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="input-email" placeholder="email">
+          <small class="form-text text-hide" style="color: red; display:none;" id="email">Email required.</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="email"> Conform Email address</label>
+          <input type="email" class="form-control" id="input-confirm-email" placeholder="email">
+          <small class="form-text text-hide" style="color: red; display:none;" id="match-email">Email not match.</small>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" class="form-control" id="input-mobile" placeholder="phone">
+              <small class="form-text text-hide" style="color: red; display:none;" id="mobile">Mobile number must have 10 numbers.</small>
+          </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+    <!--  row   -->
+
+
+
+    <label for="contact-preference">Gender</label>
+    <div class="radio">
+      <label>
+        <input type="radio" name="contact-preference"  value="am" id="maleRadio" checked>Male
+    </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="contact-preference" value="pm" id="femaleRadio" checked>Female
+    </label>
+    </div>
+
+
+
+
+
+<button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+</form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script src='js/main.js'></script>
+
+
+</body>
+
+</html>
