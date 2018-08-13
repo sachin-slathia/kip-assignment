@@ -3,6 +3,7 @@ package com.knoldus;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Movie {
@@ -17,7 +18,7 @@ public class Movie {
 
     public static List<Movie> movieList = new ArrayList<>();
     private static Set<Integer> idSet = new HashSet<>();
-    private static Scanner scanner = new Scanner(System.in);
+    private static Scanner input = new Scanner(System.in);
 
     //Constructor
     Movie(Integer id, String name, String releaseDate, String releaseYear, Double rating,
@@ -46,30 +47,46 @@ public class Movie {
         Integer movieId = 0;
         while (checkId) {
             System.out.println("Enter the movie id");
-            movieId = scanner.nextInt();
-            if (!idSet.contains(movieId)) {
-                idSet.add(movieId);
-                checkId = false;
-            } else System.out.println("Record already exists ");
-        }
+
+            try {
+                movieId = input.nextInt();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Oops you have entered a value that is not Integer Enter Again");
+
+            }
+                if (!idSet.contains(movieId)) {
+                    idSet.add(movieId);
+                    checkId = false;
+                } else System.out.println("Record already exists ");
+
+            }
 
         System.out.println("Enter the movie name");
-        String movieName = scanner.next();
+        String movieName = input.next();
 
         System.out.println("Enter the releaseDate of movie in format dd-mm-yyyy");
-        String releaseDate = scanner.next();
+        String releaseDate = input.next();
 
         System.out.println("Enter the releaseYear of movie in format yyyy");
-        String releaseYear = scanner.next();
+        String releaseYear = input.next();
 
-        System.out.println("Enter the rating of movie");
-       Double movieRating = scanner.nextDouble();
+        System.out.println("Enter the rating of movie (1-10)");
+        Double movieRating=0.0;
+        try {
+             movieRating = input.nextDouble();
+        }
+        catch (InputMismatchException e)
+        {
+            System.out.println("Only integers are allowed");
+        }
+
 
         System.out.println("Enter the actor of movie");
-        String actor = scanner.next();
+        String actor = input.next();
 
         System.out.println("Enter the director of movie ");
-        String director = scanner.next();
+        String director = input.next();
 
         Movie movie = new Movie(movieId, movieName, releaseDate,
                 releaseYear, movieRating, actor, director);
@@ -86,7 +103,23 @@ public class Movie {
 
         return !movieById.isEmpty() ? Optional.of(movieById) : Optional.empty();
     }
+    /*public static void updateList(Integer movieId)
+    {
+        Optional result=Movie.getMovie(movieId);
 
+        if(result.isPresent())
+        {
+            System.out.println("Enter the name you want to update");
+
+            String updatedName=input.next();
+            Movie movie=(Movie)result.get();
+            System.out.println("dasdas"+movie);
+            movie.name=updatedName;
+            System.out.println(movie);
+
+        }
+    }
+*/
     // Return List of movies
     public static Optional<List<Movie>> getListMovie() {
 
@@ -97,6 +130,12 @@ public class Movie {
     public static List<Movie> deleteMovie(Integer movieId) {
 
         return movieList.stream().filter(movie -> movie.id != movieId).collect(Collectors.toList());
+    }
+    //Returns List according to offset
+  public static List<Movie> getMovies(Integer offset, Integer limit) {
+
+      System.out.println(movieList.get(offset));
+      return movieList;
     }
 
 
@@ -151,13 +190,21 @@ public class Movie {
 
     }
 
+    public static Optional<Map<String, Long>> moviesPerDirector(){
 
-}
+        List<String> updatedList = movieList.stream()
+                .map(movie -> movie.director)
+                .collect(Collectors.toCollection(ArrayList::new));
 
-  /*  public static Map<String,String> moviesPerDirector()
-    {
-        Map<String,String> countMovies=new HashMap<String, String>();
+        return !updatedList.isEmpty() ? Optional.of(updatedList.stream()
+                    .filter(directorName -> !directorName.isEmpty())
+                    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())))
+                    :Optional.empty();
+    }
 
-        movieList.stream().map(movie->movie.collect(Collectors.toMap(x -> x, x -> x.getName()));
 
-}*/
+    }
+
+
+
+
