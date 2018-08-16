@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<br>
+<br>
+<div class="container">
+  <div class="row" >
+    <div class="col-md-3 panel panel-default">
+      <div class="panel-heading">All</div>
+      <div class="panel-body">
+        <div *ngFor="let name of allData | filterCategories:'category'">
+          <p>{{name.key}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6" >
+      <div *ngFor="let name of allData | filterCategories:'category'">
+        <h3><strong>{{name.key}}</strong></h3>
+
+        <div *ngFor="let item of name.value">
+          <p>{{item.name}} <button type="button" (click)="addItems(item.name,item.price)">+</button>
+            <button type="button" (click)="removeItems(item.name,item.price)">-</button></p>
+        </div>
+      </div>
+    </div>
+   <div class="col-md-3">
+     <h3><strong> Cart </strong></h3>
+     <div *ngFor ="let name of cart">
+       <span><strong>{{name.item}}</strong></span>&nbsp;
+       <span><strong>{{name.price}}</strong></span>&nbsp;
+       <span><strong>{{name.quantity}}</strong></span>&nbsp;
+
+     </div>
+     <span><strong><p>Total Price= {{totalPrice}}</p></strong></span>
+
+   </div>
+
+  </div>
+</div>
