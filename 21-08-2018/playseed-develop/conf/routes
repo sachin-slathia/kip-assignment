@@ -1,0 +1,5 @@
+# Routes
+GET         /register                                      controllers.MainApplication.homePage
+
+GET   /getUser/:email                                             controllers.Application.getUser(email:String)
+GET /public/*file                            controllers.Assets.at(path="/public", file)

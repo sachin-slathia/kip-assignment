@@ -1,0 +1,13 @@
+
+.color{
+color:white
+}
+
+.form-text1{
+ color:white;
+ display:none;
+}
+.background1{
+
+ background-image: url("/public/images/background.jpg");
+}

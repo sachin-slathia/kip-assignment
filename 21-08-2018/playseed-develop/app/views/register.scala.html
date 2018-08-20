@@ -1,0 +1,108 @@
+
+
+@()(implicit requestHeader:RequestHeader,flash:Flash);
+
+@import helper._
+@main{
+@CSRF.formField
+<h2 align="center" class="color">Sign Up</h2>
+<form >
+    <br><br>
+    <div class="row color" >
+        <div class="col-md-4">
+            <small class="form-group">
+                <label for="input-first-name">First Name</label>
+                <input type="text" class="form-control" placeholder="Required" name="first-name" id="input-first-name">
+                <small class="form-text1"  id="first-name">First Name Required.
+                </small>
+            </div>
+
+        <!--  col-md-6   -->
+
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="input-middle-name">Middle Name</label>
+                <input type="text" class="form-control" placeholder="Optional" name="middle-name" id="input-middle-name">
+            </div>
+        </div>
+        <!--  col-md-6   -->
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="input-last-name">Last Name</label>
+                <input type="text" class="form-control" placeholder="Required" name="last-name" id="input-last-name">
+                <small class="form-text1" id="last-name">Last Name Required.
+                </small>
+            </div>
+        </div>
+        <!--  col-md-6   -->
+    </div>
+
+
+    <div class="row color">
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label for="email">User Name</label>
+                <input type="email" class="form-control" id="input-email" name="user-name" placeholder="User Name">
+                <small class="form-text1" id="email">Email required.
+                </small>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label for="input-password">Password</label>
+                <input type="password" class="form-control" id="input-password" name="password" placeholder="password">
+                <small class="form-text1" id="password">Please type Valid Password.
+                </small>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label for="input-confirm-password">Retype password</label>
+                <input type="password" class="form-control" id="input-confirm-password"  name="password1" placeholder="retype-password">
+                <small class="form-text1" id="match-password">Password not
+                    match.
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row color">
+        <div class="col-md-6">
+
+            <div class="form-group">
+                <label for="input-mobile">Phone Number</label>
+                <input type="tel" class="form-control" id="input-mobile" name="phone-number"placeholder="phone">
+                <small class="form-text1" id="mobile">Mobile number must
+                    have 10 numbers.
+                </small>
+            </div>
+        </div>
+        <div class="col-md-6"><label for="maleRadio">Gender</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="male" id="maleRadio" checked>Male
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="female" id="femaleRadio" checked>Female
+                </label></div>
+            <!--  col-md-6   -->
+        </div>
+        <!--  row   -->
+
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+</form>
+}
