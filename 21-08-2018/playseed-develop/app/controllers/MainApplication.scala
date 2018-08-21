@@ -5,8 +5,8 @@ import forms.SignUp
 import javax.inject.Inject
 import models.StoreInDatabase
 import play.api.mvc.{AbstractController, Action, AnyContent, ControllerComponents}
-import scala.concurrent.ExecutionContext.Implicits.global
 
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 class MainApplication @Inject()(controllerComponent: ControllerComponents,

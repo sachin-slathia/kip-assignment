@@ -42,29 +42,5 @@ $("form").submit(function(){
     else {
         $("#mobile").css("display","hidden");
     }
-    /*$.ajax({
-        url: 'https://reqres.in/api/users/10',
-        dataType: 'json',
-        beforeSend: function(){
-            $("#card").empty();
-            $("#card").html("Loading...");
-        },
-        type: "GET",
-        success: function(jsonData){
-            console.log(jsonData);
-            var card = '<div class="card" style="display: block;">'+
-                            '<img src="'+ jsonData.data.avatar +'">'+
-                            '<div class="card-body">'+
-                                '<h4 class="card-title"><a>' + jsonData.data.first_name + ' ' + jsonData.data.last_name + '</a></h4>'+
-                            '</div>'+
-                        '</div>';
-            $("#card").empty();
-            $("#card").html(card);
-        },
-        error: function(error){
-            $("#card").empty();
-            $("#card").html(error);
-        }
 
-    });*/
 });
