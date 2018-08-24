@@ -21,8 +21,9 @@ class CustomDeSerializer extends Deserializer[Student] {
 
     val log = Logger("print")
     try {
-      if (bytes == null)
+      if (bytes == null) {
         log.info("No value is present in class Student")
+      }
       val byteInputStream = new ByteArrayInputStream(bytes)
       val inputObject = new ObjectInputStream(byteInputStream)
       val objectDeserialized = inputObject.readObject().asInstanceOf[Student]
@@ -34,3 +35,4 @@ class CustomDeSerializer extends Deserializer[Student] {
   }
 
 }
+

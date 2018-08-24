@@ -31,3 +31,4 @@ class CustomSerializer extends Serializer[Student] {
   }
 
 }
+
