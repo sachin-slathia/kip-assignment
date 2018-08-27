@@ -1,22 +1,24 @@
+
 package streams
 
 import java.util.Properties
 
+import com.knoldus.serializers.{PersonDeserializer, PersonSerializer}
 import com.knoldus.streams.repository.{Employee, Person}
-import com.knoldus.streams.serdes.CustomSerde
+import com.knoldus.streams.serdes.EmployeeSerde
 import org.apache.kafka.common.serialization._
-import org.apache.kafka.streams.kstream.{KStream, KStreamBuilder}
-import org.apache.kafka.streams.{KafkaStreams, StreamsConfig}
+import org.apache.kafka.streams.kstream.{KStream, KStreamBuilder, Produced}
+import org.apache.kafka.streams.{KafkaStreams, KeyValue, StreamsConfig}
 
 
 object MapExample extends App {
 
   val config = {
     val properties = new Properties()
-    properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "stream-application-v9")
+    properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "stream-application-v10")
     properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
     properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass)
-    properties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, classOf[CustomSerde])
+    properties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, classOf[EmployeeSerde])
 
 
     properties
@@ -29,17 +31,29 @@ object MapExample extends App {
   print(originalStream.print())
 
 
-  val modifiedStream: KStream[String, Person] = originalStream.mapValues(employee => Person(employee.id,
-    if (employee.gender.equalsIgnoreCase("MAle")) s"Mr ${employee.firstName} " +
-      s"${employee.lastName}" else s"Miss ${employee.firstName} ${employee.lastName}"))
+  val updatedStream: KStream[String, Person] = originalStream.map((key, employee: Employee) => {
 
+    val person = Person(employee.Id,
+      if (employee.GENDER.equalsIgnoreCase("MAle")) s"Mr ${employee.FIRST_NAME} " +
+        s"${employee.LAST_NAME}" else s"Miss ${employee.FIRST_NAME} ${employee.LAST_NAME}")
 
+    KeyValue.pair(key, person)
 
+  })
+
+  print(updatedStream.print())
+
+  val personSerde: Serde[Person] = Serdes.serdeFrom(new PersonSerializer, new PersonDeserializer)
+
+  updatedStream.to("Person1", Produced.`with`(Serdes.String(), personSerde))
   val str = new KafkaStreams(builder, config)
   str.cleanUp()
   str.start()
 
-  modifiedStream.to("Person")
+
+
 
 
 }
+
+
