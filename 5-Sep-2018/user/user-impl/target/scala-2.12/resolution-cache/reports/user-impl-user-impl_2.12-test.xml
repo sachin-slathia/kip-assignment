@@ -7,7 +7,7 @@
 		revision="0.1.0-SNAPSHOT"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, dev-mode"
-		date="20180905165631"/>
+		date="20180905175354"/>
 	<dependencies>
 		<module organisation="com.lightbend.lagom" name="lagom-scaladsl-testkit_2.12">
 			<revision name="1.4.8" status="release" pubdate="20180831184359" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://www.lagomframework.com/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="135">
@@ -1275,7 +1275,7 @@
 			</revision>
 		</module>
 		<module organisation="user-api" name="user-api_2.12">
-			<revision name="0.1.0-SNAPSHOT" status="integration" pubdate="20180905165628" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="1">
+			<revision name="0.1.0-SNAPSHOT" status="integration" pubdate="20180905175348" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="1">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="user-impl" name="user-impl_2.12" conf="test, compile, runtime" rev="0.1.0-SNAPSHOT" rev-constraint-default="0.1.0-SNAPSHOT" rev-constraint-dynamic="0.1.0-SNAPSHOT" callerrev="0.1.0-SNAPSHOT"/>
 				<artifacts>

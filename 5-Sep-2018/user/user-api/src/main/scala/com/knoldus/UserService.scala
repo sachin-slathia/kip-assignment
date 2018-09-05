@@ -14,10 +14,10 @@ trait UserService extends Service {
     // @formatter:off
     named("user")
       .withCalls(
-        restCall(Method.GET, "/api/getuser/:id", getUser _),
-        restCall(Method.POST, "/api/insertuser/:id/:name", insertUser _),
-        restCall(Method.DELETE, "/api/deleteuser/:id", deleteUser _),
-        restCall(Method.PUT, "api/update/:id/:name", updateUser _)
+        restCall(Method.GET, "/api/get/:id", getUser _),
+        restCall(Method.POST, "/api/insert/:id/:name", insertUser _),
+        restCall(Method.DELETE, "/api/delete/:id", deleteUser _),
+        restCall(Method.PUT, "/api/update/:id/:name", updateUser _)
       )
       .withAutoAcl(true)
     // @formatter:on

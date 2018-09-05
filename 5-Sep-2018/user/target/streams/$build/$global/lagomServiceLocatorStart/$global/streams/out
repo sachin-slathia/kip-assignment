@@ -1,0 +1,74 @@
+[0m[[0m[31merror[0m] [0m[0mjava.lang.RuntimeException: Failed to start embedded Service Locator or Service Gateway. Hint: Are ports 9008 and 9000 already in use?[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.$anonfun$start$1(Servers.scala:111)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.$anonfun$start$1$adapted(Servers.scala:101)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.withContextClassloader(Servers.scala:129)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.start(Servers.scala:101)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.sbt.LagomPlugin$.$anonfun$startServiceLocatorTask$1(LagomPlugin.scala:512)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function1.$anonfun$compose$1(Function1.scala:44)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:40)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.std.Transform$$anon$4.work(System.scala:67)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$2(Execute.scala:269)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:16)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.work(Execute.scala:278)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$1(Execute.scala:269)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:178)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.CompletionService$$anon$2.call(CompletionService.scala:37)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:748)[0m
+[0m[[0m[31merror[0m] [0m[0mCaused by: java.lang.RuntimeException: Unable to start service locator on port 9008[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.discovery.ServiceLocatorServer.start(ServiceLocatorServer.scala:39)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.reflect.Method.invoke(Method.java:498)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.$anonfun$start$1(Servers.scala:105)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.$anonfun$start$1$adapted(Servers.scala:101)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.withContextClassloader(Servers.scala:129)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.dev.Servers$ServiceLocator$.start(Servers.scala:101)[0m
+[0m[[0m[31merror[0m] [0m[0m	at com.lightbend.lagom.sbt.LagomPlugin$.$anonfun$startServiceLocatorTask$1(LagomPlugin.scala:512)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function1.$anonfun$compose$1(Function1.scala:44)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:40)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.std.Transform$$anon$4.work(System.scala:67)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$2(Execute.scala:269)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:16)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.work(Execute.scala:278)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Execute.$anonfun$submit$1(Execute.scala:269)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:178)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.CompletionService$$anon$2.call(CompletionService.scala:37)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:748)[0m
+[0m[[0m[31merror[0m] [0m[0mCaused by: akka.stream.impl.io.ConnectionSourceStage$$anon$2$$anon$1: Bind failed because of java.net.BindException: Address already in use[0m
+[0m[[0m[31merror[0m] [0m[0mCaused by: java.net.BindException: Address already in use[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.Net.bind0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.Net.bind(Net.java:433)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.Net.bind(Net.java:425)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.io.TcpListener.liftedTree1$1(TcpListener.scala:56)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.io.TcpListener.<init>(TcpListener.scala:53)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.util.Reflect$.instantiate(Reflect.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.actor.ArgsReflectConstructor.produce(IndirectActorProducer.scala:96)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.actor.Props.newActor(Props.scala:212)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.actor.ActorCell.newActor(ActorCell.scala:624)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.actor.ActorCell.create(ActorCell.scala:650)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:523)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:545)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:283)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.dispatch.Mailbox.run(Mailbox.scala:224)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)[0m
+[0m[[0m[31merror[0m] [0m[0m	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)[0m

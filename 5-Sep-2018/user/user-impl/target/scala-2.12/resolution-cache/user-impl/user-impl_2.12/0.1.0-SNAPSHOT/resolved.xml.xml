@@ -4,7 +4,7 @@
 		module="user-impl_2.12"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20180905165631"
+		publication="20180905175354"
 	>
 		<description>
 		user-impl

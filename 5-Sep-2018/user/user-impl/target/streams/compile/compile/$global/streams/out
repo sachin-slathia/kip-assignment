@@ -1,4 +1,40 @@
-[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserLoader.scala:28:62: Cannot find a value of type: [com.lightbend.lagom.scaladsl.persistence.PersistentEntityRegistry][0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserLoader.scala:20:54: not found: type UserService[0m
+[0m[[0m[31merror[0m] [0m[0m  override def describeService = Some(readDescriptor[UserService])[0m
+[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserLoader.scala:28:45: not found: type UserService[0m
 [0m[[0m[31merror[0m] [0m[0m  override lazy val lagomServer = serverFor[UserService](wire[UserServiceImpl])[0m
-[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:9:33: not found: type UserService[0m
+[0m[[0m[31merror[0m] [0m[0mclass UserServiceImpl() extends UserService {[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:13:20: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m      val result = User.userList.find(user => user.id.get == id)[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:24:20: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m      val result = User.userList.find(user => user.id.get == id)[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:30:22: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m                     User.userList.-=(result.get)[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:31:22: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m                     User.userList.+=(User(result.get.id, name))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:31:39: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m                     User.userList.+=(User(result.get.id, name))[0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:40:20: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m      val result = User.userList.find(user => user.id.get == id)[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:45:22: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m                     User.userList.-=(result.get)[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:55:20: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m      val result = User.userList.find(user => user.id.get == id)[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:60:26: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m                         User.userList.+=(User(Option(id), name))[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/user/user-impl/src/main/scala/com/knoldus/UserServiceImpl.scala:60:43: not found: value User[0m
+[0m[[0m[31merror[0m] [0m[0m                         User.userList.+=(User(Option(id), name))[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m13 errors found[0m
