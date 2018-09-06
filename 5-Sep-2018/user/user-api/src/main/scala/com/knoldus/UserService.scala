@@ -15,9 +15,9 @@ trait UserService extends Service {
     named("user")
       .withCalls(
         restCall(Method.GET, "/api/get/:id", getUser _),
-        restCall(Method.POST, "/api/insert/:id/:name", insertUser _),
+        restCall(Method.POST, "/api/insert/", insertUser _),
         restCall(Method.DELETE, "/api/delete/:id", deleteUser _),
-        restCall(Method.PUT, "/api/update/:id/:name", updateUser _)
+        restCall(Method.PUT, "/api/update/", updateUser _)
       )
       .withAutoAcl(true)
     // @formatter:on
@@ -25,11 +25,11 @@ trait UserService extends Service {
 
   def getUser(id: Int): ServiceCall[NotUsed, String]
 
-  def updateUser(id: Int, name: String): ServiceCall[NotUsed, String]
+  def updateUser(): ServiceCall[User, String]
 
   def deleteUser(id: Int): ServiceCall[NotUsed, String]
 
-  def insertUser(id: Int, name: String): ServiceCall[NotUsed, String]
+  def insertUser(): ServiceCall[User, String]
 }
 
 case class User(id: Option[Int], name: String)
