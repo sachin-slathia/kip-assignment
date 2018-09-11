@@ -3,9 +3,9 @@ package com.knoldus
 import org.apache.log4j.Logger
 import org.apache.spark.{SparkConf, SparkContext}
 
-object QuestionFirst extends App {
+object Question extends App {
   lazy val logger = Logger.getLogger(getClass.getName)
-  val name = "QuestionFirst"
+  val name = "Question"
   val conf = new SparkConf().setAppName(name).
                   setMaster("local[2]").set("spark.executor.memory", "1g")
   val sc = SparkContext.getOrCreate(conf)
